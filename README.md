@@ -16,30 +16,19 @@ The [Processing.js](http://processingjs.org) Javascript extension is used to dis
 
 ## Installation and Usage
 
-
-
-
-### Deployment
-
+1. Make sure the requirements are all installed
+2. Define your CouchDB backend settings in .couchapprc
+3. Deploy with `ruby deploy.rb`
+4. Navigate to the URL shown in the output of the above command
 
 ## Development TODO
 
-* 'Sketches' and 'Renderings'
-* Genericize
-* Template CRUD
+* Complete sketch template CRUD
 * Separate production deploy
 * Endless pagination
 * Start/stop animated documents
 * Image uploading
 * Proportions alteration
-
-* Safari only?
-* Endless pagination
-* Production deploy to use build.js
-* Freeze/play animated pdes
-* Allow for proportions altering
-* Store templates in couch, CRUD them
-* Algorithms :)
 
 ## License
 
