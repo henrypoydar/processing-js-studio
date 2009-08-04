@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <title>Processing JS Studio - Testbed</title>
+    
+    <meta content='text/html; charset=utf-8' http-equiv='content-type' />
+    <meta content='en-us' http-equiv='content-language' />
+    
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <script src="../lib/javascripts/processing.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      if ( window.addEventListener ) {
+        window.addEventListener("load", function() {
+          var scripts = document.getElementsByTagName("script");
+          for ( var i = 0; i < scripts.length; i++ ) {
+            if ( scripts[i].type == "application/processing" ) {
+              var src = scripts[i].src, canvas = scripts[i].nextSibling;
+              if ( src && src.indexOf("#") ) {
+                canvas = document.getElementById( src.substr( src.indexOf("#") + 1 ) );
+              } else {
+                while ( canvas && canvas.nodeName.toUpperCase() != "CANVAS" )
+                  canvas = canvas.nextSibling;
+              }
+              if ( canvas ) {
+                Processing(canvas, scripts[i].text);
+              }
+            }
+          }
+        }, false);
+      }
+    </script>
+
+  </head>
+  <body class="uppercase">
+    
+    <div class="container">
+    
+      <div id="flash"></div>
+      <div id="header"></div>
+      <div id="main">
+        <script type="application/processing" target="view">
+
+//--------------------------
+        
+// Cut and paste Processing code here to test browser compatibility
+
+//--------------------------
+
+        </script>
+        <canvas id="view" width="600" height="480"></canvas>
+      </div>
+    
+      <div id="footer">
+      </div>
+
+    </div>
+  </body>
+</html>

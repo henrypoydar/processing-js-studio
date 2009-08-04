@@ -1,0 +1,10 @@
+{
+  "env": { 
+    "default": {
+      "db": "http://localhost:5984/processing-js-studio-dev"
+    },
+    "production": {
+      "db": "http:///user:pass@example.com/processing-js-studio-production"
+    }
+  }
+}

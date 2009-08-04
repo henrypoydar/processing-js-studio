@@ -1,0 +1,31 @@
+<h2>Add a new sketch template</h2>
+
+<canvas id="view" class="new preview center"></canvas>
+
+<form action="#/manage/new" method="post" class="processing">
+  
+  <p>
+    <label for="sketch_name">Sketch name:</label>
+    <input type="text" name="sketch_name" value="" id="sketch_name" />
+  </p>
+  
+  <p>
+    <label for="sketch_code">Sketch code:</label>
+    <textarea class="source" name="sketch_code" id="sketch_code">
+int cv_width = 600;\n
+int cv_height = 480;\n
+\n
+void setup() {\n
+  size(cv_width, cv_height);\n
+  background(#808080);\n
+}
+    </textarea>
+  </p>
+  
+  <p>
+    <input type="button" name="preview" value="Preview" id="preview_sketch" class="preview" />
+    <input type="submit" name="add" value="Add" id="add_sketch" />
+    <a href="#/manage">Cancel</a></small>
+  </p>
+
+</form>

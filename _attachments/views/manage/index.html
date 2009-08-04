@@ -1,0 +1,12 @@
+<p><a href="#/manage/new">Create a new sketch</a></p>
+
+<% if (list.length > 0) { %>
+  <p>Select a sketch to edit:</p>
+  <ul class="sketches">
+    <% for ( var i = 0; i < list.length; i++ ) { %>
+      <li><a href="#/manage/edit/<%= i %>"><%= list[i].name %></a></li>
+    <% } %>
+  </ul>
+<% } %>
+
+<p><small><a href="#/">Back</a></small></p>

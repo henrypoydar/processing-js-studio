@@ -1,0 +1,29 @@
+<div class="rendering_view">
+  <div class="overlay"></div>
+  <img src="../../<%= item._id %>/rendering.png" />
+</div>
+
+<p class="caption">
+  <%= item.template_algorithm.name %>
+  <br />
+  <%= timestamp %>
+  <br />
+  <a class="toggle_grid">Grid</a> /
+  <a class="toggle_palette">Palette</a> /
+  <a class="toggle_source">Source</a> /
+  <a href="#/renderings">Back</a>
+</p>
+
+<ul class="palette clearfix">
+  <% for ( var i = 0; i < item.palette.length; i++ ) { %>
+    <li class="palette_chip" style="background:<%= item.palette[i] %>;">
+      <%= item.palette[i] %>
+    </li>
+  <% } %>
+</ul>
+
+<div class="source">
+  <pre>
+<%= item.template_algorithm.code %>
+  </pre>
+</div>

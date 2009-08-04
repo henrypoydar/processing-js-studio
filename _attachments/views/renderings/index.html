@@ -1,0 +1,11 @@
+<ul class="renderings clearfix">
+  <% for ( var i = 0; i < list.length; i++ ) { %>
+    <li class="rendering">
+      <a href="#/rendering/<%= list[i].doc._id %>">
+        <img src="../../<%= list[i].doc._id %>/thumbnail.png" width="150" class="rendering_thumbnail"/>
+      </a>
+    </li>
+  <% } %>
+</ul>
+
+<p><a href="#/">Back</a></p>

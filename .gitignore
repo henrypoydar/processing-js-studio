@@ -1,0 +1,5 @@
+.couchapprc
+.DS_Store
+_attachments/javascripts/*.js
+_attachments/stylesheets/*.css
+lib/styles/.sass-cache
