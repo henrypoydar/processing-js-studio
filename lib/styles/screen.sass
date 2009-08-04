@@ -11,13 +11,14 @@ html, body
 body
   :background-color #f1f1f1
   :font-size 100%
-  :font-family Whitney,"Myriad Pro", MyriadPro, Helvetica, "Helvetica Neue", Arial, sans-serif
+  //:font-family Whitney,"Myriad Pro", MyriadPro, Helvetica, "Helvetica Neue", Arial, sans-serif
   :text-transform none
   &.uppercase
     :text-transform uppercase
   
 h2
   :font-size 110%
+  :font-weight bold
   
 a
   :color rgb(50, 116, 209) !important
@@ -29,11 +30,19 @@ a
 b
   +loud
   
+small
+  :font-size 80%
+  
 label
   :display block
   :font-size 80%
   :color #666
-  :text-transform uppercase
+  
+input[type=text]
+  :font-family Arial, helvetica, sans-serif
+  
+input[type=text], textarea
+  :margin-top 0.1em
 
 .container
   :min-height 100%
@@ -156,8 +165,7 @@ form.processing
     :width 600px
     :height 300px
     +processing-code
-    &.source
-      :display block
+ 
   input#sketch_name
     :width 600px
   
