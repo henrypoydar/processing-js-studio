@@ -1,0 +1,27 @@
+<h2>Edit sketch template '<%= item.name %>'</h2>
+
+<canvas id="view" class="edit preview center"></canvas>
+
+<form action="#/manage/edit/<%= item._id %>" method="put" class="processing">
+  
+  <p>
+    <label for="sketch_name">Sketch name:</label>
+    <input type="text" name="sketch_name" value="<%= item.name %>" id="sketch_name" class="title" />
+  </p>
+  
+  <p>
+    <label for="sketch_code">Sketch code:</label>
+    <textarea class="" name="sketch_code" id="sketch_code">
+<%= item.code %>
+    </textarea>
+  </p>
+  
+  <p>
+    <input type="button" name="preview" value="Preview" id="preview_sketch" class="preview" />
+    <input type="submit" name="edit" value="Update" id="edit_sketch" />
+    <small><a href="#/manage">Cancel</a></small>
+  </p>
+  
+  <p><small>Created <%= timestamp %></small></p>
+
+</form>
