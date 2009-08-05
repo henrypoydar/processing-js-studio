@@ -2,7 +2,7 @@
 
 <canvas id="view" class="new preview center"></canvas>
 
-<form action="#/manage/new" method="post" class="processing">
+<form action="#/manage/new" method="post" class="processing" id="sketch_form" enctype="multipart/form-data">
   
   <p>
     <label for="sketch_name">Sketch name:</label>
@@ -20,6 +20,11 @@ void setup() {\n
   background(#808080);\n
 }
 </textarea>
+  </p>
+  
+  <p>
+    <label for="sketch_file" class="inline">Sketch file: (optional)</label>
+    <input type="file" name="sketch_file" />
   </p>
   
   <p>
