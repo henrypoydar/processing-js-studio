@@ -26,6 +26,7 @@ The [Processing.js](http://processingjs.org) Javascript extension is used to dis
 
 * Sketches to include attached images
 * Separate production deploy
+* Preview on creation
 * Endless pagination
 * Start/stop animated documents
 * Image uploading
