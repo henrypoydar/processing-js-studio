@@ -11,7 +11,7 @@
   
   <p>
     <label for="sketch_code">Sketch code:</label>
-    <textarea class="" name="sketch_code" id="sketch_code">
+    <textarea class="source" name="sketch_code" id="sketch_code">
 <%= item.code %>
     </textarea>
   </p>
@@ -19,6 +19,7 @@
   <p>
     <input type="button" name="preview" value="Preview" id="preview_sketch" class="preview" />
     <input type="submit" name="edit" value="Update" id="edit_sketch" />
+    <small><a href="#/manage/delete/<%= item._id %>">Delete</a></small>
     <small><a href="#/manage">Cancel</a></small>
   </p>
   
