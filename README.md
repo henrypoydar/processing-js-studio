@@ -20,6 +20,7 @@ The [Processing.js](http://processingjs.org) Javascript extension is used to dis
 2. Define your CouchDB backend settings in .couchapprc
 3. Deploy with `ruby deploy.rb`
 4. Navigate to the URL shown in the output of the above command
+5. Upload some Processing sketches by clicking on the 'Manage' sketches link
 
 ## Development TODO
 
