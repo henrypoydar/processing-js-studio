@@ -24,7 +24,7 @@ The [Processing.js](http://processingjs.org) Javascript extension is used to dis
 
 ## Development TODO
 
-* Complete sketch template CRUD
+* Sketches to include attached images
 * Separate production deploy
 * Endless pagination
 * Start/stop animated documents
