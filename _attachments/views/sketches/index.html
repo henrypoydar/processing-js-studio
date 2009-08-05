@@ -1,7 +1,7 @@
-<p>Select a template:</p>
-<ul class="template_algorithms">
+<p>Select a sketch template:</p>
+<ul class="sketches">
   <% for ( var i = 0; i < list.length; i++ ) { %>
-    <li><a href="#/template/<%= i %>"><%= list[i].name %></a></li>
+    <li><a href="#/sketch/<%= list[i].doc._id %>"><%= list[i].doc.name %></a></li>
   <% } %>
 </ul>
 
