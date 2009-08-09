@@ -24,9 +24,9 @@ The [Processing.js](http://processingjs.org) Javascript extension is used to dis
 
 ## Development TODO
 
-* Sketches to include attached images
+* Update editing functionality so attachments aren't blanked
+* Spruce up editing and preview look/feel (Sproutcore?)
 * Separate production deploy
-* Preview on creation
 * Delete renderings
 * Endless pagination
 * Start/stop animated documents
