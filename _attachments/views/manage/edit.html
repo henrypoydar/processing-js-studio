@@ -2,7 +2,7 @@
 
 <canvas id="view" class="edit preview center"></canvas>
 
-<div style="width:0;height:0;line-height:0;display:none;">
+<div style="width:0;height:0;line-height:0;display:none;" class="hidden_vars">
   <input type="hidden" id="document_id" value="<%= item._id %>" />
   <input type="hidden" id="document_rev_id" value="<%= item._rev %>" />
   <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
