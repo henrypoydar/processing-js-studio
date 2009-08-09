@@ -174,4 +174,99 @@ form.processing
   input#sketch_name
     :width 600px
   
+// Dialog
+
+#overlay
+  background: #bbb
+  cursor: wait
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+
+
+*html #overlay
+  position: absolute
+  width: expression(document.body.clientWidth + 'px')
+  height: expression(document.body.clientHeight + 'px')
+
+#dialog
+  background= #fff image_url("progress.gif") "50%" "50%" "no-repeat"
+  overflow: hidden
+  opacity: .95
+  max-width: 33em
+  padding: 1em 1em 0
+  border: 4px solid #555
+  -moz-border-radius: 7px
+  -webkit-border-radius: 7px
+  -webkit-box-shadow: 0 0 7px #666
+  -moz-box-shadow: #666 0 0 7px
+
+
+*html #dialog
+  width: 33em
+
+#dialog
+  &.loading
+    width: 220px
+    height: 80px
+
+  &.loaded
+    background-image: none
+
+  h2
+    font-size: 110%
+    font-weight: bold
+    margin: 0 -2em
+    padding: .35em 2em
+
+  fieldset
+    :border 0px
+
+  fieldset
+    table
+      margin-top: 1em
+
+    th, td
+      padding: .5em
+      vertical-align: top
+
+    th
+      font-weight: bold
+      text-align: right
+
+    input
+      vertical-align: middle
+
+    div.error
+      padding-top: .3em
+      color: #b33
+
+  .buttons
+    padding: 0 .5em .5em
+    text-align: right
+
+
+
+  fieldset td#progress
+    background= image_url("progress.gif") "50%" "50%" "no-repeat"
+    visibility: hidden
+
+ul.sketch_images
+  :list-style none
+  :margin 0px
+  :font-size 80%
   
+p.add_image
+  :margin-top 0px
+  :font-size 80%
+  
+a.delete_image
+  :width 15px
+  :height 15px
+  :display inline-block
+  :background-image= image_url("delete.png")
+  :background-repeat no-repeat
+  :background-position 0px 0px
+  :text-indent -5000px

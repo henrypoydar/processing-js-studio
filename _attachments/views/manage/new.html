@@ -2,7 +2,7 @@
 
 <canvas id="view" class="new preview center"></canvas>
 
-<form action="#/manage/new" method="post" class="processing" id="sketch_form" enctype="multipart/form-data">
+<form action="#/manage/new" method="post" class="processing" id="sketch_form">
   
   <p>
     <label for="sketch_name">Sketch name:</label>
@@ -11,20 +11,11 @@
   
   <p>
     <label for="sketch_code">Sketch code:</label>
-<textarea class="source" name="sketch_code" id="sketch_code">
-int cv_width = 600;\n
-int cv_height = 480;\n
-\n
-void setup() {\n
-  size(cv_width, cv_height);\n
-  background(#808080);\n
-}
-</textarea>
+<textarea class="source" name="sketch_code" id="sketch_code"><%= APP_DATA.starting_sketch.chomp().trim() %></textarea>
   </p>
   
   <p>
-    <label for="sketch_file" class="inline">Sketch file: (optional)</label>
-    <input type="file" name="sketch_file" />
+    <i>You can add an image file after the sketch has been initially created.</i>
   </p>
   
   <p>

@@ -2,6 +2,15 @@
 
 <canvas id="view" class="edit preview center"></canvas>
 
+<div style="width:0;height:0;line-height:0;display:none;">
+  <input type="hidden" id="document_id" value="<%= item._id %>" />
+  <input type="hidden" id="document_rev_id" value="<%= item._rev %>" />
+  <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
+    <img src="../../<%= item._id %>/<%= k %>" id="<%= k %>" class="<%= k.cssify() %>" />
+  <% }); } %>
+</div>
+
+
 <form action="#/manage/edit/<%= item._id %>" method="put" class="processing">
   
   <p>
@@ -11,9 +20,20 @@
   
   <p>
     <label for="sketch_code">Sketch code:</label>
-    <textarea class="source" name="sketch_code" id="sketch_code">
-<%= item.code %>
-    </textarea>
+    <textarea class="source" name="sketch_code" id="sketch_code"><%= item.code.chomp().trim() %></textarea>
+  </p>
+  
+  <label for="sketch_images">Sketch images:</label>
+  <ul class="sketch_images">
+    <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
+      <li class="<%= k.cssify() %>">
+        <a href="../../<%= item._id %>/<%= k %>"><%= k %></a>
+        <a class="delete_image" rel="<%= k %>">Delete</a>
+      </li>
+    <% }); } %>
+  </ul>
+  <p class="add_image">
+    <a id="add_image">Add image</a>
   </p>
   
   <p>
