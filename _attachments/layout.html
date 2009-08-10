@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <title>Processing JS Studio - Layout</title>
+    
+    <meta content='text/html; charset=utf-8' http-equiv='content-type' />
+    <meta content='en-us' http-equiv='content-language' />
+    
+    <link href="stylesheets/layout.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+
+    <script src="../lib/javascripts/jquery-1.3.2.js" type="text/javascript"></script>
+    <script src="../lib/javascripts/jquery.cookie.js" type="text/javascript"></script>
+    <script src="../lib/javascripts/splitter.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    $().ready(function(){
+      $(".splitter").splitter({sizeLeft: 200});
+    });     
+    </script>
+
+    
+</head>
+<body>
+  <div id="header">
+    <h1>Processing JS Studio</h1>
+    <ul>
+      <li>Nav item 1</li>
+      <li>Nav item 2</li>
+    </ul>
+  </div>
+  <div id="main" class="splitter">
+    <div id="left">
+    
+      <h3>Renderings</h3>
+      <ul>
+        <li class="selected"><a>By date</a></li>
+        <li><a>By type</a></li>
+      </ul>
+      
+      <h3 class="expand">Generate renderings</h3>
+      <ul>
+        <li><a>Iscus ruscea doren</a></li>
+        <li><a>Dolor et phuseum</a></li>
+        <li><a>Lorem ipsum</a></li>
+      </ul>
+      
+      <h3 class="expand">Manage sketches</h3>
+      <ul>
+        <li><a>Iscus ruscea doren</a></li>
+        <li><a>Dolor et phuseum</a></li>
+        <li><a>Lorem ipsum</a></li>       
+      </ul>
+
+    </div>
+    <div id="right">
+      
+      
+      
+    </div>
+  </div>
+  <div id="footer">
+    <h4>&copy; <a href="http://hpoydar.com">Henry Poydar</a>. 
+Licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 United States License</a>.</h4>
+  </div>
+</body>
+</html>

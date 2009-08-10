@@ -1,0 +1,159 @@
+@import base.sass
+
+=processing-code
+  :font-family Monaco, "Lucida Console", Courier, "Courier New", monospace
+  :color #000
+  :font-size 105%
+
+html, body
+  :height 100%
+  
+body
+  :background-color #f1f1f1
+  :font-size 100%
+  //:font-family Whitney,"Myriad Pro", MyriadPro, Helvetica, "Helvetica Neue", Arial, sans-serif
+  :text-transform none
+  &.uppercase
+    :text-transform uppercase
+  :padding 0
+  :margin 0
+  
+a
+  :color rgb(50, 116, 209)
+  :text-decoration none
+  :cursor pointer
+  &:hover
+    :text-decoration underline
+    
+#header, #footer
+  :position absolute
+  :width 100%
+  :height 22px
+  background= #fff image_url("bg_bar.gif") "repeat-x" "center" "center"
+  :z-index 1000
+   
+
+#footer
+  :bottom 0
+  :left 0
+  :border-top 1px solid #d3d3d3
+  :text-align center
+  
+  h4
+    :line-height 22px
+    :font-size 11px
+    :padding 0
+    :margin 0
+    :color #808080
+    :text-shadow 0px 1px 1px #fff
+    :font-weight normal
+    a
+      :text-decoration none
+      :color #808080
+      &:hover
+        :color rgb(50, 116, 209)
+      
+  
+#header
+  :top 0
+  :left 0
+  :border-bottom 1px solid #d3d3d3
+  
+  h1
+    :display block
+    :float left
+    :height 22px
+    :line-height 22px
+    :font-size 11px
+    :padding 0
+    :margin 0
+    :color #808080
+    :text-shadow 0px 1px 1px #fff
+    :font-weight normal
+    :text-transform uppercase
+    :padding-left 5px
+    
+  ul
+    :display block
+    :float left
+    :list-style none
+    :padding 0
+    :margin 0
+    :height 22px
+    li
+      :float left
+      :display block
+      :height 22px
+      :line-height 22px
+      :font-size 11px
+      :display inline
+      :color #555
+      :text-shadow 0px 1px 1px #fff
+      :font-weight bold
+      :text-transform uppercase
+      :padding-left 23px
+      background= image_url("arrow-right.png") "no-repeat" "8px" "6px"
+      
+  
+.splitter
+  :height 100%
+  :width 100% 
+  
+  div
+    :overflow auto
+    //:margin-top 22px
+    
+    .title 
+      :position absolute
+      :z-index 5000
+    
+    &#left
+      :background #dbe3ea
+
+.vsplitbar
+  :width 1px
+  :background #d3d3d3
+  :z-index 50
+  :cursor col-resize
+  
+  
+#left
+  h3
+    :margin 10px 0 0 0 
+    :padding 0
+    :height 22px
+    :line-height 22px
+    :font-size 11px
+    :color #6f8192
+    :text-shadow 0px 1px 1px #fff
+    :font-weight bold
+    :text-transform uppercase
+    :padding-left 8px
+    
+    &:first-child
+      :margin-top 32px
+  
+    &.expand
+      :padding-left 22px
+      background= image_url("arrow-right.png") "no-repeat" "8px" "6px"
+      
+      
+  ul
+    :margin 0
+    :padding 0
+    :list-style none
+    li
+      :font-size 12px
+      :color #333
+      :line-height 20px
+      :padding-left 22px
+      :overflow hidden
+      :white-space no-wrap
+      a
+        :color #333
+      &.selected
+        background= "#91a0c0" image_url("bg_nav.gif") "repeat-x" "center" "center"
+        a
+          :color #fff
+          :font-weight bold
+          :text-shadow 0px 1px 1px #4b5582
