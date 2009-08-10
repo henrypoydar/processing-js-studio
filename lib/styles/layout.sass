@@ -36,7 +36,7 @@ a
 #footer
   :bottom 0
   :left 0
-  :border-top 1px solid #d3d3d3
+  :border-top 1px solid #b3b3b3
   :text-align center
   
   h4
@@ -57,7 +57,7 @@ a
 #header
   :top 0
   :left 0
-  :border-bottom 1px solid #d3d3d3
+  :border-bottom 1px solid #b3b3b3
   
   h1
     :display block
@@ -72,6 +72,7 @@ a
     :font-weight normal
     :text-transform uppercase
     :padding-left 5px
+    :width 200px
     
   ul
     :display block
@@ -93,6 +94,9 @@ a
       :text-transform uppercase
       :padding-left 23px
       background= image_url("arrow-right.png") "no-repeat" "8px" "6px"
+      &:first-child
+        :padding-left 0px
+        :background-image none
       
   
 .splitter
@@ -112,7 +116,7 @@ a
 
 .vsplitbar
   :width 1px
-  :background #d3d3d3
+  :background #b3b3b3
   :z-index 50
   :cursor col-resize
   
