@@ -15,258 +15,176 @@ body
   :text-transform none
   &.uppercase
     :text-transform uppercase
-  
-h2
-  :font-size 110%
-  :font-weight bold
+  :padding 0
+  :margin 0
   
 a
-  :color rgb(50, 116, 209) !important
+  :color rgb(50, 116, 209)
   :text-decoration none
   :cursor pointer
   &:hover
     :text-decoration underline
-
-b
-  +loud
-  
-small
-  :font-size 80%
-  
-label
-  :display block
-  :font-size 80%
-  :color #666
-  &.inline
-    :display inline
-  
-input[type=text]
-  :font-family Arial, helvetica, sans-serif
-  
-input[type=text], textarea
-  :margin-top 0.1em
-
-.container
-  :min-height 100%
-  :position relative
-  :width 100%
-  :min-width 600px
-  
-#flash
-  :margin 1em 1em 0 1em
-  :text-align center
-  
-#footer
-  :position absolute
-  :bottom 1em
-  :right 1em
-  :font-size 0.70em
-  +quiet
-  
-canvas#view, .rendering_view
-  display: block
-  width: 600px
-  height: 480px
-  margin: 3.5em auto 2em auto
-  background= #fff image_url("loading.png") "no-repeat" "center" "center"
-  -webkit-box-shadow: 0 0 7px #666
-  -moz-box-shadow: #666 0 0 7px
-  &.new
-    :display none
-  &.edit
-    :display none
-  &.preview
-    :margin-top 2em
-  
-.rendering_thumbnail
-  -webkit-box-shadow: 0 0 5px #999
-  -moz-box-shadow: #999 0 0 5px
-  
-.rendering_view
-  :position relative
-  :width 600px
-  :height 480px
-  :display block
-  
-  
-  img
-    :position absolute
-    :z-index 100
-  
-  .overlay
-    :position absolute
-    :width 600px
-    :height 480px
-    :background-image none
-    :background-repeat no-repeat
-    :background-position top left
-    :z-index 200
-    :opacity 0.8
-  
-  .grid
-    background-image= image_url("grid600x480.png")
-      
-
-  
-#main
-  :margin-top 2em
-  +prepend(1)
-  +span(22)
-  &.center
-    :text-align center
-  
-ul.proceed
-  :padding 0
-  :margin 0
-  :font-size 1.2em
-  :margin-top 3em
-  :list-style none
-  a
-    :font-weight bold
-
-p.about
-  :margin-top 5em
-  +prepend(9)
-  +span(14)
-  
-p.caption
-  :text-align center
-  
-ul.renderings
-  :list-style none
-  :padding-top 20px
-  :margin 0 auto
-  li
-    :float left
-    :margin 0 20px 15px 0
-    a
-      :background-color transparent
-      
-ul.palette
-  :display none
-  :list-style none
-  :background #fff
-  :padding 15px
-  :margin-bottom 15px
-  li
-    :text-indent 5000px
-    :float left
-    :display block
-    :width 30px
-    :height 30px
     
-.source_code
-  :text-transform none !important
-  :display none
-  :background #fff
-  :border 1px solid #ccc
-  :margin 20px auto
-  :padding 20px
-  +span(14)
-  +processing-code
+#header, #footer
+  :position absolute
+  :width 100%
+  :height 22px
+  background= #fff image_url("bg_bar.gif") "repeat-x" "center" "center"
+  :z-index 1000
+   
+
+#footer
+  :bottom 0
+  :left 0
+  :border-top 1px solid #b3b3b3
+  :text-align center
   
-form.processing
-  textarea
-    :width 600px
-    :height 300px
-    +processing-code
- 
-  input#sketch_name
-    :width 600px
+  h4
+    :line-height 22px
+    :font-size 11px
+    :padding 0
+    :margin 0
+    :color #808080
+    :text-shadow 0px 1px 1px #fff
+    :font-weight normal
+    a
+      :text-decoration none
+      :color #808080
+      &:hover
+        :color rgb(50, 116, 209)
+      
   
-// Dialog
-
-#overlay
-  background: #bbb
-  cursor: wait
-  position: fixed
-  width: 100%
-  height: 100%
-  top: 0
-  left: 0
-
-
-*html #overlay
-  position: absolute
-  width: expression(document.body.clientWidth + 'px')
-  height: expression(document.body.clientHeight + 'px')
-
-#dialog
-  background= #fff image_url("progress.gif") "50%" "50%" "no-repeat"
-  overflow: hidden
-  opacity: .95
-  max-width: 33em
-  padding: 1em 1em 0
-  border: 4px solid #555
-  -moz-border-radius: 7px
-  -webkit-border-radius: 7px
-  -webkit-box-shadow: 0 0 7px #666
-  -moz-box-shadow: #666 0 0 7px
-
-
-*html #dialog
-  width: 33em
-
-#dialog
-  &.loading
-    width: 220px
-    height: 80px
-
-  &.loaded
-    background-image: none
-
-  h2
-    font-size: 110%
-    font-weight: bold
-    margin: 0 -2em
-    padding: .35em 2em
-
-  fieldset
-    :border 0px
-
-  fieldset
-    table
-      margin-top: 1em
-
-    th, td
-      padding: .5em
-      vertical-align: top
-
-    th
-      font-weight: bold
-      text-align: right
-
-    input
-      vertical-align: middle
-
-    div.error
-      padding-top: .3em
-      color: #b33
-
-  .buttons
-    padding: 0 .5em .5em
-    text-align: right
-
-
-
-  fieldset td#progress
-    background= image_url("progress.gif") "50%" "50%" "no-repeat"
-    visibility: hidden
-
-ul.sketch_images
-  :list-style none
-  :margin 0px
-  :font-size 80%
+#header
+  :top 0
+  :left 0
+  :border-bottom 1px solid #b3b3b3
   
-p.add_image
-  :margin-top 0px
-  :font-size 80%
+  h1
+    :display block
+    :float left
+    :height 22px
+    :line-height 22px
+    :font-size 11px
+    :padding 0
+    :margin 0
+    :color #808080
+    :text-shadow 0px 1px 1px #fff
+    :font-weight normal
+    :text-transform uppercase
+    :padding-left 5px
+    :width 200px
+    
+  ul
+    :display block
+    :float left
+    :list-style none
+    :padding 0
+    :margin 0
+    :height 22px
+    li
+      :float left
+      :display block
+      :height 22px
+      :line-height 22px
+      :font-size 11px
+      :display inline
+      :color #555
+      :text-shadow 0px 1px 1px #fff
+      :font-weight bold
+      :text-transform uppercase
+      :padding-left 23px
+      background= image_url("arrow-right.png") "no-repeat" "8px" "6px"
+      &:first-child
+        :padding-left 0px
+        :background-image none
+      
   
-a.delete_image
-  :width 15px
-  :height 15px
-  :display inline-block
-  :background-image= image_url("delete.png")
-  :background-repeat no-repeat
-  :background-position 0px 0px
-  :text-indent -5000px
+.splitter
+  :height 100%
+  :width 100% 
+  
+  div
+    :overflow auto
+    //:margin-top 22px
+    
+    .title 
+      :position absolute
+      :z-index 5000
+    
+    &#nav
+      :background #dbe3ea
+
+.vsplitbar
+  :width 1px
+  :background #b3b3b3
+  :z-index 50
+  :cursor col-resize
+  
+  
+#nav
+
+  div
+    :margin 10px 0 0 0 
+    :padding 0
+    &:first-child
+      :margin-top 32px
+
+  h3
+    :margin 0
+    :padding 0
+    :height 22px
+    :line-height 22px
+    :font-size 11px
+    :color #6f8192
+    :text-shadow 0px 1px 1px #fff
+    :font-weight bold
+    :text-transform uppercase
+    :padding-left 8px
+
+    &.expand
+      :padding-left 22px
+      :cursor pointer
+      background= image_url("arrow-right.png") "no-repeat" "8px" "6px"
+    
+      &.expanded
+        background-image= image_url("arrow-down.png")
+
+  ul
+    :margin 0
+    :padding 0
+    :list-style none
+    li
+      :font-size 12px
+      :color #333
+      :line-height 20px
+      :padding-left 22px
+      :overflow hidden
+      :white-space no-wrap
+      a
+        :color #333
+      &.selected
+        background= "#91a0c0" image_url("bg_nav.gif") "repeat-x" "center" "center"
+        a
+          :color #fff
+          :font-weight bold
+          :text-shadow 0px 1px 1px #4b5582
+          
+          
+#main
+
+  .rendering_thumbnail
+    -webkit-box-shadow: 0 0 5px #999
+    -moz-box-shadow: #999 0 0 5px
+    
+
+
+  ul.renderings
+    :list-style none
+    :padding-top 42px
+    :padding-left 20px
+    :margin 0 auto
+    li
+      :float left
+      :margin 0 20px 15px 0
+      a
+        :background-color transparent

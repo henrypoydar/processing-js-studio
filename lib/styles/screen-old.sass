@@ -1,0 +1,272 @@
+@import base.sass
+
+=processing-code
+  :font-family Monaco, "Lucida Console", Courier, "Courier New", monospace
+  :color #000
+  :font-size 105%
+
+html, body
+  :height 100%
+  
+body
+  :background-color #f1f1f1
+  :font-size 100%
+  //:font-family Whitney,"Myriad Pro", MyriadPro, Helvetica, "Helvetica Neue", Arial, sans-serif
+  :text-transform none
+  &.uppercase
+    :text-transform uppercase
+  
+h2
+  :font-size 110%
+  :font-weight bold
+  
+a
+  :color rgb(50, 116, 209) !important
+  :text-decoration none
+  :cursor pointer
+  &:hover
+    :text-decoration underline
+
+b
+  +loud
+  
+small
+  :font-size 80%
+  
+label
+  :display block
+  :font-size 80%
+  :color #666
+  &.inline
+    :display inline
+  
+input[type=text]
+  :font-family Arial, helvetica, sans-serif
+  
+input[type=text], textarea
+  :margin-top 0.1em
+
+.container
+  :min-height 100%
+  :position relative
+  :width 100%
+  :min-width 600px
+  
+#flash
+  :margin 1em 1em 0 1em
+  :text-align center
+  
+#footer
+  :position absolute
+  :bottom 1em
+  :right 1em
+  :font-size 0.70em
+  +quiet
+  
+canvas#view, .rendering_view
+  display: block
+  width: 600px
+  height: 480px
+  margin: 3.5em auto 2em auto
+  background= #fff image_url("loading.png") "no-repeat" "center" "center"
+  -webkit-box-shadow: 0 0 7px #666
+  -moz-box-shadow: #666 0 0 7px
+  &.new
+    :display none
+  &.edit
+    :display none
+  &.preview
+    :margin-top 2em
+  
+.rendering_thumbnail
+  -webkit-box-shadow: 0 0 5px #999
+  -moz-box-shadow: #999 0 0 5px
+  
+.rendering_view
+  :position relative
+  :width 600px
+  :height 480px
+  :display block
+  
+  
+  img
+    :position absolute
+    :z-index 100
+  
+  .overlay
+    :position absolute
+    :width 600px
+    :height 480px
+    :background-image none
+    :background-repeat no-repeat
+    :background-position top left
+    :z-index 200
+    :opacity 0.8
+  
+  .grid
+    background-image= image_url("grid600x480.png")
+      
+
+  
+#main
+  :margin-top 2em
+  +prepend(1)
+  +span(22)
+  &.center
+    :text-align center
+  
+ul.proceed
+  :padding 0
+  :margin 0
+  :font-size 1.2em
+  :margin-top 3em
+  :list-style none
+  a
+    :font-weight bold
+
+p.about
+  :margin-top 5em
+  +prepend(9)
+  +span(14)
+  
+p.caption
+  :text-align center
+  
+ul.renderings
+  :list-style none
+  :padding-top 20px
+  :margin 0 auto
+  li
+    :float left
+    :margin 0 20px 15px 0
+    a
+      :background-color transparent
+      
+ul.palette
+  :display none
+  :list-style none
+  :background #fff
+  :padding 15px
+  :margin-bottom 15px
+  li
+    :text-indent 5000px
+    :float left
+    :display block
+    :width 30px
+    :height 30px
+    
+.source_code
+  :text-transform none !important
+  :display none
+  :background #fff
+  :border 1px solid #ccc
+  :margin 20px auto
+  :padding 20px
+  +span(14)
+  +processing-code
+  
+form.processing
+  textarea
+    :width 600px
+    :height 300px
+    +processing-code
+ 
+  input#sketch_name
+    :width 600px
+  
+// Dialog
+
+#overlay
+  background: #bbb
+  cursor: wait
+  position: fixed
+  width: 100%
+  height: 100%
+  top: 0
+  left: 0
+
+
+*html #overlay
+  position: absolute
+  width: expression(document.body.clientWidth + 'px')
+  height: expression(document.body.clientHeight + 'px')
+
+#dialog
+  background= #fff image_url("progress.gif") "50%" "50%" "no-repeat"
+  overflow: hidden
+  opacity: .95
+  max-width: 33em
+  padding: 1em 1em 0
+  border: 4px solid #555
+  -moz-border-radius: 7px
+  -webkit-border-radius: 7px
+  -webkit-box-shadow: 0 0 7px #666
+  -moz-box-shadow: #666 0 0 7px
+
+
+*html #dialog
+  width: 33em
+
+#dialog
+  &.loading
+    width: 220px
+    height: 80px
+
+  &.loaded
+    background-image: none
+
+  h2
+    font-size: 110%
+    font-weight: bold
+    margin: 0 -2em
+    padding: .35em 2em
+
+  fieldset
+    :border 0px
+
+  fieldset
+    table
+      margin-top: 1em
+
+    th, td
+      padding: .5em
+      vertical-align: top
+
+    th
+      font-weight: bold
+      text-align: right
+
+    input
+      vertical-align: middle
+
+    div.error
+      padding-top: .3em
+      color: #b33
+
+  .buttons
+    padding: 0 .5em .5em
+    text-align: right
+
+
+
+  fieldset td#progress
+    background= image_url("progress.gif") "50%" "50%" "no-repeat"
+    visibility: hidden
+
+ul.sketch_images
+  :list-style none
+  :margin 0px
+  :font-size 80%
+  
+p.add_image
+  :margin-top 0px
+  :font-size 80%
+  
+a.delete_image
+  :width 15px
+  :height 15px
+  :display inline-block
+  :background-image= image_url("delete.png")
+  :background-repeat no-repeat
+  :background-position 0px 0px
+  :text-indent -5000px
