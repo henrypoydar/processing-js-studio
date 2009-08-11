@@ -1,48 +1,55 @@
-<h2>Edit sketch template '<%= item.name %>'</h2>
+<div id="main_container" class="main_splitter">
+  
+  <div class="show">
+    <canvas id="view" class="edit preview center"></canvas>
 
-<canvas id="view" class="edit preview center"></canvas>
+    <div style="width:0;height:0;line-height:0;display:none;" class="hidden_vars">
+      <input type="hidden" id="document_id" value="<%= item._id %>" />
+      <input type="hidden" id="document_rev_id" value="<%= item._rev %>" />
+      <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
+        <img src="../../<%= item._id %>/<%= k %>" id="<%= k %>" class="<%= k.cssify() %>" />
+      <% }); } %>
+    </div>
+    
+      
+    
+    <form action="#/manage/edit/<%= item._id %>" method="put" class="processing" id="sketch_form">
 
-<div style="width:0;height:0;line-height:0;display:none;" class="hidden_vars">
-  <input type="hidden" id="document_id" value="<%= item._id %>" />
-  <input type="hidden" id="document_rev_id" value="<%= item._rev %>" />
-  <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
-    <img src="../../<%= item._id %>/<%= k %>" id="<%= k %>" class="<%= k.cssify() %>" />
-  <% }); } %>
+        <label for="sketch_name">Sketch name:</label>
+        <input type="text" name="sketch_name" value="<%= item.name %>" id="sketch_name" class="title" />
+
+        <label for="sketch_code">Sketch code:</label>
+        <textarea class="source" name="sketch_code" id="sketch_code"><%= item.code.chomp().trim() %></textarea>
+
+    </form>
+    
+    
+    
+  </div>
+  <div class="info">  
+    
+    <p>
+      <b>Edit '<%= item.name %>'</b><br />
+      <small>Created <%= timestamp %></small>
+    </p>
+    
+    <ul class='info_options'>
+      <li class='button'><a class="preview_sketch">Preview</a></li>
+      <li class='button no_toggle'><a id="add_image">Add image</a></li>
+      <li class='button no_toggle'><a class="submit_sketch_form">Update</a></li>
+      <li class='button no_toggle'><a href="#/manage/delete/<%= item._id %>">Delete</a></li>
+    </ul>
+    
+    <label for="sketch_images">Sketch images:</label>
+    <ul class="sketch_images">
+      <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
+        <li class="<%= k.cssify() %>">
+          <a href="../../<%= item._id %>/<%= k %>"><%= k %></a>
+          <a class="delete_image" rel="<%= k %>">Delete</a>
+        </li>
+      <% }); } %>
+    </ul>
+    
+  </div>
+ 
 </div>
-
-
-<form action="#/manage/edit/<%= item._id %>" method="put" class="processing">
-  
-  <p>
-    <label for="sketch_name">Sketch name:</label>
-    <input type="text" name="sketch_name" value="<%= item.name %>" id="sketch_name" class="title" />
-  </p>
-  
-  <p>
-    <label for="sketch_code">Sketch code:</label>
-    <textarea class="source" name="sketch_code" id="sketch_code"><%= item.code.chomp().trim() %></textarea>
-  </p>
-  
-  <label for="sketch_images">Sketch images:</label>
-  <ul class="sketch_images">
-    <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
-      <li class="<%= k.cssify() %>">
-        <a href="../../<%= item._id %>/<%= k %>"><%= k %></a>
-        <a class="delete_image" rel="<%= k %>">Delete</a>
-      </li>
-    <% }); } %>
-  </ul>
-  <p class="add_image">
-    <a id="add_image">Add image</a>
-  </p>
-  
-  <p>
-    <input type="button" name="preview" value="Preview" id="preview_sketch" class="preview" />
-    <input type="submit" name="edit" value="Update" id="edit_sketch" />
-    <small><a href="#/manage/delete/<%= item._id %>">Delete</a></small>
-    <small><a href="#/manage">Cancel</a></small>
-  </p>
-  
-  <p><small>Created <%= timestamp %></small></p>
-
-</form>

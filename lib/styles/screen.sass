@@ -171,7 +171,8 @@ a
       :line-height 20px
       :padding-left 22px
       :overflow hidden
-      :white-space no-wrap
+      :white-space nowrap
+      :text-overflow ellipsis
       a
         :color #333
       &.selected
@@ -200,8 +201,6 @@ a
       :display none
     &.edit
       :display none
-    &.preview
-      :margin-top 2em
   
   .rendering_thumbnail
     -webkit-box-shadow: 0 0 5px #999
@@ -213,24 +212,23 @@ a
     :height 480px
     :display block
   
+    .overlay
+      :position absolute
+      :width 600px
+      :height 480px
+      :background-image none
+      :background-repeat no-repeat
+      :background-position top left
+      :z-index 200
+      :opacity 0.8
   
-  img
-    :position absolute
-    :z-index 100
-  
-  .overlay
-    :position absolute
-    :width 600px
-    :height 480px
-    :background-image none
-    :background-repeat no-repeat
-    :background-position top left
-    :z-index 200
-    :opacity 0.8
-  
-  .grid
-    background-image= image_url("grid600x480.png")
+    .grid
+      background-image= image_url("grid600x480.png")
     
+    img
+      :position absolute
+      :z-index 100
+
   ul.renderings
     :list-style none
     :padding-top 42px
@@ -240,8 +238,7 @@ a
       :float left
       :margin 0 20px 15px 0
       :display block
-      :width 150px
-      :height 120px
+      :position static
       a
         :background-color transparent
   
@@ -282,10 +279,9 @@ a
   :background #fffff1
   :overflow hidden
   p
-    :padding-left 10px
-    :padding-right 10px
+    :padding 10px
     &:first-child
-      :margin-top 82px
+      :margin-top 72px
   ul
     :list-style none
     :padding 0
@@ -330,6 +326,10 @@ a
     :margin 0px auto 20px auto
     :width 600px
     :display block
+    :position static !important
+    
+  textarea
+    +processing-code
     
   label
     :display block
