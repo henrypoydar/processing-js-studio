@@ -1,29 +1,38 @@
-<div class="rendering_view">
-  <div class="overlay"></div>
-  <img src="../../<%= item._id %>/rendering.png" />
+<div id="main_container" class="main_splitter">
+  <div class="show">
+    <div class="rendering_view">
+      <div class="overlay"></div>
+      <img src="../../<%= item._id %>/rendering.png" />
+    </div>
+    <ul class="palette clearfix">
+      <% for ( var i = 0; i < item.palette.length; i++ ) { %>
+        <li class="palette_chip" style="background:<%= item.palette[i] %>;">
+          <%= item.palette[i] %>
+        </li>
+      <% } %>
+    </ul>
+
+    <div class="source_code">
+      <pre>
+    <%= item.sketch.code.chomp().trim() %>
+      </pre>
+    </div>
+    
+  </div>
+  <div class="info">
+    <p>
+      <b>Rendering</b><br />
+      <%= item.sketch.name %><br />
+      <small>Created <%= timestamp %></small>
+    </p>
+    
+    <ul class='info_options'>
+      <li class='button'><a class="toggle_grid">Grid</a></li>
+      <li class='button'><a class="toggle_palette">Palette</a></li>
+      <li class='button'><a class="toggle_source">Source</a></li>
+    </ul>
+    
+    
+  </div>
 </div>
 
-<p class="caption">
-  <%= item.sketch.name %>
-  <br />
-  <%= timestamp %>
-  <br />
-  <a class="toggle_grid">Grid</a> /
-  <a class="toggle_palette">Palette</a> /
-  <a class="toggle_source">Source</a> /
-  <a href="#/renderings">Back</a>
-</p>
-
-<ul class="palette clearfix">
-  <% for ( var i = 0; i < item.palette.length; i++ ) { %>
-    <li class="palette_chip" style="background:<%= item.palette[i] %>;">
-      <%= item.palette[i] %>
-    </li>
-  <% } %>
-</ul>
-
-<div class="source_code">
-  <pre>
-<%= item.sketch.code %>
-  </pre>
-</div>

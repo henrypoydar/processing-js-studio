@@ -1,9 +1,19 @@
-<canvas id="view"></canvas>
+<div id="main_container" class="main_splitter">
+  <div class="show">
+    <canvas id="view"></canvas>
 
-<p class="caption">
-  <%= item.name %>
-  <br />
-  <a href="#/sketch/reload/<%= item._id %>">Regenerate</a> / 
-  <a href="#/renderings/save/<%= item._id %>">Save</a> /
-  <a href="#/sketches">Back</a>
-</p>
+    
+  </div>
+  <div class="info">
+    <p>
+      <b><%= item.name %></b>
+    </p>
+    
+    <ul class='info_options'>
+      <li class='button no_toggle'><a href="#/sketch/reload/<%= item._id %>">Regenerate</a></li>
+      <li class='button no_toggle'><a href="#/renderings/save/<%= item._id %>">Save</a></li>
+    </ul>
+    
+    
+  </div>
+</div>

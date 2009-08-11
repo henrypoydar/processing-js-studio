@@ -19,7 +19,8 @@ body
   :margin 0
   
 a
-  :color rgb(50, 116, 209)
+  //:color rgb(50, 116, 209)
+  :color #000
   :text-decoration none
   :cursor pointer
   &:hover
@@ -37,12 +38,15 @@ a
   :bottom 0
   :left 0
   :border-top 1px solid #b3b3b3
-  :text-align center
+  :text-align right
+  :padding 0
+  :margin 0
+  :overflow hidden
   
   h4
     :line-height 22px
     :font-size 11px
-    :padding 0
+    :padding 0 10px 0 0 
     :margin 0
     :color #808080
     :text-shadow 0px 1px 1px #fff
@@ -51,7 +55,7 @@ a
       :text-decoration none
       :color #808080
       &:hover
-        :color rgb(50, 116, 209)
+        :color #000
       
   
 #header
@@ -120,6 +124,12 @@ a
   :z-index 50
   :cursor col-resize
   
+.main_splitter
+  :height 100%
+  :width 100% 
+
+  div
+    :overflow auto
   
 #nav
 
@@ -172,19 +182,136 @@ a
           
 #main
 
+  canvas#view, .rendering_view
+    display: block
+    width: 600px
+    height: 480px
+    margin: 82px auto 20px auto
+    background= #fff image_url("loading.png") "no-repeat" "center" "center"
+    -webkit-box-shadow: 0 0 7px #666
+    -moz-box-shadow: #666 0 0 7px
+    &.new
+      :display none
+    &.edit
+      :display none
+    &.preview
+      :margin-top 2em
+  
   .rendering_thumbnail
     -webkit-box-shadow: 0 0 5px #999
     -moz-box-shadow: #999 0 0 5px
+  
+  .rendering_view
+    :position relative
+    :width 600px
+    :height 480px
+    :display block
+  
+  
+  img
+    :position absolute
+    :z-index 100
+  
+  .overlay
+    :position absolute
+    :width 600px
+    :height 480px
+    :background-image none
+    :background-repeat no-repeat
+    :background-position top left
+    :z-index 200
+    :opacity 0.8
+  
+  .grid
+    background-image= image_url("grid600x480.png")
     
-
-
   ul.renderings
     :list-style none
     :padding-top 42px
     :padding-left 20px
-    :margin 0 auto
+    :margin 0
     li
       :float left
       :margin 0 20px 15px 0
+      :display block
+      :width 150px
       a
         :background-color transparent
+  
+  ul.palette
+    :display none
+    :list-style none
+    :border-top 1px solid #fff
+    :border-right 1px solid #fff
+    :margin 20px auto
+    :width 600px
+    :padding 0
+    li
+      :padding 0
+      :text-indent 5000px
+      :float left
+      :display block
+      :width 30px
+      :height 30px
+      :border-left 1px solid #fff
+      :border-bottom 1px solid #fff
+
+  .source_code
+    :text-transform none !important
+    :display none
+    :background #fff
+    :border 1px solid #ccc
+    :margin 20px auto
+    :padding 10px
+    :width 580px
+    :text-align left
+    +processing-code
+
+
+
+        
+.info
+  :margin 0
+  :padding 0
+  :text-align center
+  :font-size 80%
+  :background #fffff1
+  :overflow hidden
+  p
+    &:first-child
+      :margin-top 82px
+  ul
+    :list-style none
+    :padding 0
+    :margin 0
+    li.button
+      :padding 0
+      :height 22px
+      :line-height 22px
+      background= #fff image_url("bg_btn.gif") "repeat-x" "center" "center"
+      :border-bottom 1px solid #999
+      :border-left 1px solid #999
+      :border-right 1px solid #999
+      :width 80px
+      :margin 0px auto
+      :text-shadow 0px 1px 1px #fff
+      :font-size 90%
+      a
+        :color #333
+        :text-decoration none
+      &:first-child
+        :border-top 1px solid #999
+      &.depressed
+        background-image= image_url("bg_btn_x.gif")
+        a
+          :color #fff
+          :font-weight bold
+          :text-shadow 0px 1px 1px #4b5582
+        
+    
+  small
+    :color #555
+    :font-size 85%
+      
+.show
+  :text-align center
