@@ -178,6 +178,10 @@ a
           :color #fff
           :font-weight bold
           :text-shadow 0px 1px 1px #4b5582
+      &.add
+        :font-weight bold
+        a
+          :color green
           
           
 #main
@@ -276,6 +280,8 @@ a
   :background #fffff1
   :overflow hidden
   p
+    :padding-left 10px
+    :padding-right 10px
     &:first-child
       :margin-top 82px
   ul
@@ -312,7 +318,27 @@ a
     :font-size 85%
       
 .show
+
+  form
+    :margin-top 42px
+  
   :text-align center
+  
+  textarea, input
+    :margin 0px auto 20px auto
+    :width 600px
+    
+  label
+    :display block
+    :margin 0
+    :padding 0
+    :height 22px
+    :line-height 22px
+    :font-size 11px
+    :color #6f8192
+    :text-shadow 0px 1px 1px #fff
+    :font-weight bold
+    :text-transform uppercase
   
   
 #flash
@@ -331,7 +357,7 @@ a
   :padding 0
   :z-index 5000
   
-  &.success
+  &.success, &.error
     :background none
     :border 0px
     :color green
@@ -340,4 +366,17 @@ a
     a
       :color green
       :text-decoration underline
+  &.error
+    :color red
+    a
+      :color red
+      
+.source_code
+  :text-transform none !important
+  :display none
+  :background #fff
+  :border 1px solid #ccc
+  :margin 20px auto
+  :padding 20px
+  +processing-code
     

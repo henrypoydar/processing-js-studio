@@ -1,27 +1,35 @@
-<h2>Add a new sketch template</h2>
+<div id="main_container" class="main_splitter">
+  
+  <div class="show">
+    <canvas id="view" class="new preview center"></canvas>
+      
+    
+    <form action="#/manage/new" method="post" class="processing" id="sketch_form">
 
-<canvas id="view" class="new preview center"></canvas>
+        <label for="sketch_name">Sketch name:</label>
+        <input type="text" name="sketch_name" value="" id="sketch_name" class="title" />
 
-<form action="#/manage/new" method="post" class="processing" id="sketch_form">
-  
-  <p>
-    <label for="sketch_name">Sketch name:</label>
-    <input type="text" name="sketch_name" value="" id="sketch_name" class="title" />
-  </p>
-  
-  <p>
-    <label for="sketch_code">Sketch code:</label>
-<textarea class="source" name="sketch_code" id="sketch_code"><%= APP_DATA.starting_sketch.chomp().trim() %></textarea>
-  </p>
-  
-  <p>
-    <i>You can add an image file after the sketch has been initially created.</i>
-  </p>
-  
-  <p>
-    <input type="button" name="preview" value="Preview" id="preview_sketch" class="preview" />
-    <input type="submit" name="add" value="Add" id="add_sketch" />
-    <small><a href="#/manage">Cancel</a></small>
-  </p>
+        <label for="sketch_code">Sketch code:</label>
+        <textarea class="source" name="sketch_code" id="sketch_code"><%= APP_DATA.starting_sketch.chomp().trim() %></textarea>
 
-</form>
+
+    </form>
+    
+    
+    
+  </div>
+  <div class="info">  
+    
+    <p><b>Add a new sketch template</b></p>
+    
+    <ul class='info_options'>
+      <li class='button'><a class="preview_sketch">Preview</a></li>
+      <li class='button no_toggle'><a class="submit_sketch_form">Add</a></li>
+    </ul>
+    
+    <p>
+      <i><small>You can add image files after the sketch has been created<small></i>
+    </p>
+  </div>
+ 
+</div>
