@@ -235,6 +235,7 @@ a
       :margin 0 20px 15px 0
       :display block
       :width 150px
+      :height 120px
       a
         :background-color transparent
   
@@ -267,9 +268,6 @@ a
     :text-align left
     +processing-code
 
-
-
-        
 .info
   :margin 0
   :padding 0
@@ -315,3 +313,31 @@ a
       
 .show
   :text-align center
+  
+  
+#flash
+  :position absolute
+  :top 0
+  :right 10px
+  :height 22px
+  :line-height 22px
+  :font-size 11px
+  :display block
+  :color #555
+  :text-shadow 0px 1px 1px #fff
+  :font-weight bold
+  :text-transform uppercase
+  :margin 0 
+  :padding 0
+  :z-index 5000
+  
+  &.success
+    :background none
+    :border 0px
+    :color green
+    :margin 0
+    :padding 0
+    a
+      :color green
+      :text-decoration underline
+    
