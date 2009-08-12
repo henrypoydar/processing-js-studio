@@ -15,10 +15,10 @@
     
     <form action="#/manage/edit/<%= item._id %>" method="put" class="processing" id="sketch_form">
 
-        <label for="sketch_name">Sketch name:</label>
+        <label for="sketch_name">Sketch name</label>
         <input type="text" name="sketch_name" value="<%= item.name %>" id="sketch_name" class="title" />
 
-        <label for="sketch_code">Sketch code:</label>
+        <label for="sketch_code">Sketch code</label>
         <textarea class="source" name="sketch_code" id="sketch_code"><%= item.code.chomp().trim() %></textarea>
 
     </form>
@@ -40,7 +40,7 @@
       <li class='button no_toggle'><a href="#/manage/delete/<%= item._id %>">Delete</a></li>
     </ul>
     
-    <label for="sketch_images">Sketch images:</label>
+    <label for="sketch_images">Sketch images</label>
     <ul class="sketch_images">
       <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
         <li class="<%= k.cssify() %>">

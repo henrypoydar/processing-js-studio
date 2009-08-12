@@ -26,6 +26,9 @@ a
   &:hover
     :text-decoration underline
     
+pre
+  +processing-code
+    
 #header, #footer
   :position absolute
   :width 100%
@@ -75,7 +78,7 @@ a
     :text-shadow 0px 1px 1px #fff
     :font-weight normal
     :text-transform uppercase
-    :padding-left 5px
+    :padding-left 8px
     :width 200px
     
   ul
@@ -271,6 +274,19 @@ a
     :text-align left
     +processing-code
 
+label
+  :display block
+  :margin 0
+  :padding 0
+  :height 22px
+  :line-height 22px
+  :font-size 11px
+  :color #6f8192
+  :text-shadow 0px 1px 1px #fff
+  :font-weight bold
+  :text-transform uppercase
+
+
 .info
   :margin 0
   :padding 0
@@ -278,10 +294,16 @@ a
   :font-size 80%
   :background #fffff1
   :overflow hidden
+  
+  label
+    :margin-top 20px
+  
+  
   p
     :padding 10px
     &:first-child
       :margin-top 72px
+  
   ul
     :list-style none
     :padding 0
@@ -315,6 +337,8 @@ a
     :color #555
     :font-size 85%
       
+
+      
 .show
 
   form
@@ -330,18 +354,9 @@ a
     
   textarea
     +processing-code
+    :height 350px
     
-  label
-    :display block
-    :margin 0
-    :padding 0
-    :height 22px
-    :line-height 22px
-    :font-size 11px
-    :color #6f8192
-    :text-shadow 0px 1px 1px #fff
-    :font-weight bold
-    :text-transform uppercase
+
   
   
 #flash
