@@ -1,5 +1,12 @@
 <div id="main_container" class="main_splitter">
   <div class="show">
+    
+    <div style="width:0;height:0;line-height:0;display:none;" class="hidden_vars">
+      <% if (item._attachments) { $.each(item._attachments, function(k,v) { %>
+        <img src="../../<%= item._id %>/<%= k %>" id="<%= k %>" class="<%= k.cssify() %>" />
+      <% }); } %>
+    </div>
+    
     <canvas id="view"></canvas>
 
     

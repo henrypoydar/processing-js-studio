@@ -31,6 +31,7 @@ Admittedly this is software by me for me.  I use Processing as a tool to inspire
 ## Development TODO
 
 * Add progress indicator (top left) for save, update, delete
+* Code editing (bespin)
 * Share renderings via bit.ly
 * Endless pagination
 * Start/stop animated documents
