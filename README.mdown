@@ -4,6 +4,10 @@ Use this browser-based application to create and render [Processing](http://proc
 
 The [Processing.js](http://processingjs.org) Javascript extension is used to display the Processing code within HTML canvas elements and enable the whole application to be run from within a web browser.
 
+## Background
+
+Admittedly this is software by me for me.  I use Processing as a tool to inspire and construct offline paintings.  I was looking for a way to iterate over Processing sketches with randomized elements and store the renderings that I liked.  The Processing IDE is a little cumbersome in this regard, so I built this tool to help solve the problem.  Oh and plus I enjoy hacking with neat new stuff.
+
 ## Requirements
 
 * [Compass](http://github.com/chriseppstein/compass)
@@ -24,12 +28,10 @@ The [Processing.js](http://processingjs.org) Javascript extension is used to dis
 
 ## Development TODO
 
-* New layout ... start in browse
 * Separate production deploy
 * Delete renderings
 * Endless pagination
 * Start/stop animated documents
-* Image uploading
 * Proportions alteration
 
 ## License
