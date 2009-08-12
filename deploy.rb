@@ -12,7 +12,10 @@ require 'sprockets'
 require 'jsmin'
 require 'cssmin'
 
-#TODO - accept deploy environment arg, pass on to CouchApp, only minify for production
+deploy_env = ARGV && ARGV[0] ? ARGV[0] : 'default'
+
+puts ""
+puts "Deploying to #{deploy_env} environment ..."
 
 secretary = Sprockets::Secretary.new(
   :asset_root => "_attachments",
@@ -28,7 +31,7 @@ secretary = Sprockets::Secretary.new(
   ].flatten
 )
 
-puts ""
+
 puts "Concatenating javascripts ..."
 
 concatenation = secretary.concatenation
@@ -38,21 +41,8 @@ secretary.install_assets
 puts "Converting sass to css ..."
 system 'compass'
 
-# TODO ... only minify for production
+"Pushing up to CouchDB ..."
+system "couchapp push #{deploy_env}"
 
-# puts "Minifying javascripts ..."
-# File.open("_attachments/javascripts/all.js", 'w') { |file| file.write(JSMin.minify(concatenation.to_s)) }
-# 
-# puts "Minifying stylesheets ..."
-# Dir.glob("_attachments/stylesheets/*.css").each do |css|
-#   f = ""
-#   File.open(css, 'r') {|file| f << CSSMin.minify(file)}
-#   File.open("_attachments/stylesheets/#{File.basename(css)}", 'w') {|file| file.write(f)}
-#   puts "Minified #{css}"
-# end
-
- "Pushing up to CouchDB ..."
-system "couchapp push"
-
-puts "Deploy complete"
+puts "Deploy complete to #{deploy_env} environment"
 puts ""
