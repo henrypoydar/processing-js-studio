@@ -1,17 +1,19 @@
-@import base.sass
+@import blueprint/reset.sass
+@import blueprint/screen.sass
+@import blueprint/modules/liquid.sass
+ 
++blueprint
++blueprint-liquid-grid
++blueprint-form
 
 =processing-code
   :font-family Monaco, "Lucida Console", Courier, "Courier New", monospace
   :color #000
   :font-size 105%
-
-html, body
-  :height 100%
   
 body
   :background-color #f1f1f1
   :font-size 100%
-  //:font-family Whitney,"Myriad Pro", MyriadPro, Helvetica, "Helvetica Neue", Arial, sans-serif
   :text-transform none
   &.uppercase
     :text-transform uppercase
@@ -19,7 +21,6 @@ body
   :margin 0
   
 a
-  //:color rgb(50, 116, 209)
   :color #000
   :text-decoration none
   :cursor pointer
@@ -30,7 +31,7 @@ pre
   +processing-code
     
 #header, #footer
-  :position absolute
+  :position fixed
   :width 100%
   :height 22px
   background= #fff image_url("bg_bar.gif") "repeat-x" "center" "center"
@@ -105,36 +106,16 @@ pre
         :padding-left 0px
         :background-image none
       
-  
-.splitter
-  :height 100%
-  :width 100% 
-  
-  div
-    :overflow auto
-    //:margin-top 22px
-    
-    .title 
-      :position absolute
-      :z-index 5000
-    
-    &#nav
-      :background #dbe3ea
-
-.vsplitbar
-  :width 1px
-  :background #b3b3b3
-  :z-index 50
-  :cursor col-resize
-  
-.main_splitter
-  :height 100%
-  :width 100% 
-
-  div
-    :overflow auto
+#container
+  +container
+  :width 100%
+  :min-width 950px
   
 #nav
+  +column(4)
+  :margin 0px
+  :width 200px
+  :background #d5dde6
 
   div
     :margin 10px 0 0 0 
@@ -191,6 +172,7 @@ pre
           
           
 #main
+  +column(19, true)
 
   canvas#view, .rendering_view
     display: block
@@ -402,7 +384,7 @@ label
   :padding 20px
   +processing-code
   
-  // Dialog
+// Dialog
 
 #overlay
   background: #bbb
