@@ -30,7 +30,6 @@ Admittedly this is software by me for me.  I use Processing as a tool to inspire
 
 ## Development TODO
 
-* More progress indication, disable buttons (saving renderings)
 * Code editing (bespin)
 * Share renderings via bit.ly
 * Endless pagination
