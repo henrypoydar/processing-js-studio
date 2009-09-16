@@ -36,6 +36,7 @@ Admittedly this is software by me for me.  I use Processing as a tool to inspire
 * Endless pagination
 * Start/stop animated documents
 * Proportions alteration
+* Build the whole thing in a canvas element?
 
 ## License
 

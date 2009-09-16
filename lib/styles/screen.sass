@@ -1,9 +1,9 @@
 @import base.sass
 
 =processing-code
-  //:font-family Monaco, "Lucida Console", Courier, "Courier New", monospace
-  //:color #000
-  //:font-size 12px
+  :font-family Monaco, "Lucida Console", Courier, "Courier New", monospace
+  :color #000
+  :font-size 12px
 
 html, body
   :height 100%
@@ -28,6 +28,14 @@ a
     
 pre
   +processing-code
+    
+#progress
+  :position absolute
+  :width 100%
+  :height 100%
+  :z-index 5000
+  :background-color #000
+  :opacity 0.5
     
 #header, #footer
   :position absolute
@@ -116,7 +124,7 @@ pre
     
     .title 
       :position absolute
-      :z-index 5000
+      :z-index 2000
     
     &#nav
       :background #dbe3ea
@@ -190,7 +198,14 @@ pre
           :color green
           
           
+          
+          
 #main
+
+  .info_container
+    :padding 40px 20px
+    :font-size 12px 
+    
 
   canvas#view, .rendering_view
     display: block
@@ -377,7 +392,7 @@ label
   :text-transform uppercase
   :margin 0 
   :padding 0
-  :z-index 5000
+  :z-index 2000
   
   &.success, &.error
     :background none
