@@ -31,17 +31,19 @@ pre
     
 #progress
   :position absolute
-  :top 50%
-  :left 50%
-  :width 80px
-  :height 80px
+  :top 0px
+  :right 10px
   :z-index 5000
-  background= #000 image_url("progress_spinner.gif") "no-repeat" "center" "center"
-  :opacity 0.6
+  :text-transform uppercase
   :display none
-  :border-radius 10px
-  -moz-border-radius: 10px 
-  -webkit-border-radius: 10px
+  :height 22px
+  :line-height 22px
+  :font-size 11px
+  :color #990000
+  :text-shadow 0px 1px 1px #fff
+  :font-weight bold
+  :text-transform uppercase
+
     
 #header, #footer
   :position absolute
@@ -314,7 +316,9 @@ label
   :text-align center
   :font-size 80%
   :background #fffff1
+  :display none
   :overflow hidden
+
   
   label
     :margin-top 20px
@@ -365,6 +369,7 @@ label
 
       
 .show
+  :margin-right 150px
 
   form
     :margin-top 42px
@@ -423,7 +428,7 @@ label
   :padding 20px
   +processing-code
   
-  // Dialog
+// Dialog
 
 #overlay
   background: #bbb
