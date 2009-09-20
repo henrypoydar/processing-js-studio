@@ -2,15 +2,12 @@
 
 #
 # Simple deploy recipe to wrap up the moving parts
-# of couchapp pushing based on .couchapprc settings,
-# sprockets concatenation, compass sass compilation,
-# jsmin compression and cssmin compression
+# of a couchapp push based on .couchapprc settings with
+# sprockets concatenation and compass sass compilation
 #
 
 require 'rubygems'
 require 'sprockets'
-require 'jsmin'
-require 'cssmin'
 
 deploy_env = ARGV && ARGV[0] ? ARGV[0] : 'default'
 
@@ -30,7 +27,6 @@ secretary = Sprockets::Secretary.new(
     "lib/javascripts/application.js"
   ].flatten
 )
-
 
 puts "Concatenating javascripts ..."
 

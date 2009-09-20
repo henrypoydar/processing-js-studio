@@ -15,10 +15,7 @@ Admittedly this is software by me for me.  I use Processing as a tool to inspire
 * [Compass](http://github.com/chriseppstein/compass)
 * [CouchApp](http://github.com/jchris/couchapp)
 * [CouchDB](http://couchdb.apache.org)
-* [Processing](http://processing.org)
-* [Processing JS](http://processingjs.org)
-* [Ruby and Ruby Gems](http://www.ruby-lang.org)
-* [Sammy](http://code.quirkey.com/sammy)
+* [Sprockets](http://github.com/sstephenson/sprockets/)
 
 ## Installation and Usage
 
@@ -30,6 +27,7 @@ Admittedly this is software by me for me.  I use Processing as a tool to inspire
 
 ## Development TODO
 
+* Refactor: move logic to Sammy ap
 * Code editing (bespin)
 * Share renderings via bit.ly
 * Endless pagination
